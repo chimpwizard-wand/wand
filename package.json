@@ -1,7 +1,7 @@
 {
-  "name": "wand",
-  "version": "0.0.0-development",
-  "description": "tool for turning many repos into a meta repo. why choose many repos or a monolithic repo, when you can have both with a meta repo?",
+  "name": "@chimpwizard-wand/wand",
+  "version": "0.0.10",
+  "description": "Magial tool to speed up your development cycles",
   "bin": {
     "wand": "./bin/wand"
   },
@@ -12,23 +12,23 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "clean": "meta-npm clean",
-    "clean-global-all": "npm run clean-global-loop-commands && npm run clean-global-loop-installs && npm run clean-global-meta-commands && npm run clean-global-meta-installs",
+    "clean": "wand-npm clean",
+    "clean-global-all": "npm run clean-global-loop-commands && npm run clean-global-loop-installs && npm run clean-global-wand-commands && npm run clean-global-wand-installs",
     "clean-global-loop-commands": "rm -f `npm config get prefix`/bin/*loop*",
     "clean-global-loop-installs": "rm -rf `npm config get prefix`/lib/node_modules/*loop*",
-    "clean-global-meta-commands": "rm -f `npm config get prefix`/bin/*meta*",
-    "clean-global-meta-installs": "rm -rf `npm config get prefix`/lib/node_modules/*meta*",
+    "clean-global-wand-commands": "rm -f `npm config get prefix`/bin/*wand*",
+    "clean-global-wand-installs": "rm -rf `npm config get prefix`/lib/node_modules/*wand*",
     "completion": "tabtab install",
-    "meta-install": "meta-npm install --exclude meta",
-    "meta-link": "meta-npm link",
-    "meta-link-all": "meta-npm link --all",
-    "meta-link-global": "meta-npm link && npm link",
-    "meta-link-all-global": "meta-npm link --all && npm link",
+    "wand-install": "wand-npm install --exclude wand",
+    "wand-link": "wand-npm link",
+    "wand-link-all": "wand-npm link --all",
+    "wand-link-global": "wand-npm link && npm link",
+    "wand-link-all-global": "wand-npm link --all && npm link",
     "test": "jest --coverage lib"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mateodelnorte/meta.git"
+    "url": "git+ssh://git@github.com/chimpwizard-wand/wand.git"
   },
   "keywords": [
     "git",
@@ -37,41 +37,35 @@
     "repositories",
     "meta",
     "wand",
-    "metarepo",
-    "metarepository",
+    "wandrepo",
+    "wandrepository",
     "project",
     "many"
   ],
-  "author": "hi@iammattwalters.com",
-  "contributors": [
-    "hi@iammattwalters.com",
-    "pat@patscott.io"
-  ],
-  "license": "ISC",
+  "author": "ndru@chimpwizard.com",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mateodelnorte/meta/issues"
+    "url": "https://github.com/chimpwizard-wand/wand/issues"
   },
-  "homepage": "https://github.com/mateodelnorte/meta#readme",
+  "homepage": "https://github.com/chimpwizard-wand/wand#readme",
   "dependencies": {
     "ansi-colors": "^3.2.4",
     "ansi-styles": "^3.2.1",
     "chalk": "^2.4.2",
-    "commander": "github:mateodelnorte/commander.js",
+    "commander": "^2.19.0",
     "debug": "4.1.1",
     "tabtab": "3.0.2",
     "tildify": "1.2.0"
   },
   "devDependencies": {
-    "apply-template": "4.0.1",
     "commitizen": "3.0.7",
     "cz-conventional-changelog": "2.1.0",
     "husky": "1.3.1",
     "jest": "24.1.0",
-    "meta-helloworld": "file:plugins/meta-helloworld",
-    "meta-solution": "file:plugins/meta-solution",
-    "meta-vault": "file:plugins/meta-vault",
-    "meta-github": "file:plugins/meta-github",
     "prettier": "1.16.4",
     "pretty-quick": "1.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
