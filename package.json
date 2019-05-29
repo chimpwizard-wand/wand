@@ -1,5 +1,5 @@
 {
-  "name": "@chimpwizard-wand/wand",
+  "name": "@chimpwizard/wand",
   "version": "0.0.10",
   "description": "Magial tool to speed up your development cycles",
   "bin": {
